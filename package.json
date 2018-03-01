@@ -1,0 +1,9 @@
+{
+  "name": "condo",
+  "main": "src/index.js",
+  "version": "0.0.1",
+  "devDependencies": {
+    "coffeescript": "^2.2.0",
+    "testpass": "^0.5.1"
+  }
+}

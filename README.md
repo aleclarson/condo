@@ -118,6 +118,30 @@ The `set`, `merge`, and `delete` methods will throw if a parent
 
 The `set`, `merge`, and `delete` methods are chainable.
 
+#### Custom methods
+
+The `extend` static method lets you easily add custom methods to
+your domain and entity types.
+
+```js
+box.domain({
+  type: 'foo',
+  spawn() {return {}}
+}).extend({
+  hello() {
+    this.emit('hello')
+  }
+})
+
+// Print the event to console.
+box.on('foo:hello', console.log)
+
+// Create an instance.
+let foo = box.domain.foo()
+
+foo.hello()
+```
+
 ---
 
 ### The event system
